@@ -1,0 +1,553 @@
+/* project.css */
+
+:root {
+  /* Keep these values consistent with the index page */
+  --ink: #211d1b;
+  --paper: #eee6d8;
+  --cream: #f6f0e6;
+  --burgundy: #6b2029;
+
+  --display: "Cormorant Garamond", Georgia, serif;
+  --body: "DM Sans", Arial, sans-serif;
+
+  /*
+    Desktop page padding.
+
+    This is the main value you'll probably want to change.
+    Everything on desktop follows this spacing.
+  */
+  --page-padding: 32px;
+
+  /*
+    This controls how wide normal project content can become.
+    Full-width images can extend slightly further.
+  */
+  --max-content-width: 1200px;
+  --max-full-width: 1500px;
+}
+
+
+/* =========================
+   RESET
+   ========================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--body);
+  line-height: 1.55;
+}
+
+img,
+video {
+  display: block;
+  width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+figure {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+
+/* =========================
+   SHARED PAGE PADDING
+   ========================= */
+
+/*
+  On desktop:
+  everything gets the same left/right page padding.
+
+  On mobile:
+  this padding becomes 0 where appropriate for media.
+*/
+.page-padding {
+  padding-left: var(--page-padding);
+  padding-right: var(--page-padding);
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+     /*backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);*/
+
+.site-header {
+  position: fixed;
+  top: 0;
+  z-index: 50;
+
+  width: 100%;
+  padding: 12px var(--page-padding);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--ink);
+  color: var(--paper);
+}
+
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  color: inherit;
+  text-decoration: none;
+}
+
+.logo {
+  width: 28px;
+  height: 28px;
+
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.wordmark {
+  font-family: var(--display);
+  font-size: 1.45rem;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+}
+
+.wordmark span {
+  margin-left: 6px;
+  font-size: 0.7em;
+}
+
+.site-header nav {
+  display: flex;
+  gap: 24px;
+}
+
+.site-header nav a {
+  font-size: 0.86rem;
+  text-decoration: none;
+  transition: opacity 160ms ease;
+}
+
+.site-header nav a:hover,
+.site-header nav a:focus-visible {
+  opacity: 0.55;
+}
+
+
+/* =========================
+   BACK LINK
+   ========================= */
+
+.back-wrap {
+  max-width: var(--max-content-width);
+  margin: 20px auto 0;
+}
+
+.back-link {
+  display: inline-flex;
+  padding-top: 10svh;
+  gap: 8px;
+  align-items: center;
+
+  font-size: 0.82rem;
+  text-decoration: none;
+  opacity: 0.7;
+
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
+}
+
+.back-link:hover,
+.back-link:focus-visible {
+  opacity: 1;
+  transform: translateX(-3px);
+}
+
+
+/* =========================
+   TYPOGRAPHY
+   ========================= */
+
+.eyebrow {
+  margin: 0 0 12px;
+
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+
+  opacity: 0.62;
+}
+
+h1 {
+  margin: 0;
+
+  font-family: var(--display);
+  font-size: clamp(4rem, 8vw, 7.5rem);
+  font-weight: 600;
+  line-height: 0.9;
+  letter-spacing: -0.045em;
+}
+
+.project-description {
+  max-width: 620px;
+  margin: 25px 0 0;
+
+  font-family: var(--display);
+  font-size: 1.35rem;
+  line-height: 1.25;
+}
+
+
+/* =========================
+   PROJECT INTRO
+   ========================= */
+
+.project-intro {
+  max-width: var(--max-content-width);
+  margin: calc(46px*2) auto 0;
+}
+
+.project-heading {
+  margin-bottom: 40px;
+}
+
+
+/* =========================
+   PROJECT MEDIA
+   ========================= */
+
+.project-content {
+  /*
+    Normal desktop content.
+    Images stay inside this page width.
+  */
+  width: min(100%, var(--max-content-width));
+  margin: 72px auto 0;
+}
+
+/*
+  WIDTH: FILL
+  CONTENT: FIT
+
+  This is the main behaviour you asked for:
+  images occupy the available width while keeping
+  their original aspect ratio.
+
+  Nothing is cropped by default.
+*/
+.media-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+
+/* Every individual media item */
+.media-block {
+  width: 100%;
+  margin: 0 auto 56px;
+
+  overflow: hidden;
+}
+
+
+/* Full width media can extend slightly beyond normal content */
+.media-full {
+  width: min(
+    calc(100vw - (var(--page-padding) * 2)),
+    var(--max-full-width)
+  );
+
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+
+/* Portrait content */
+.media-portrait {
+  width: min(100%, 760px);
+}
+
+
+/* =========================
+   TWO-COLUMN MEDIA
+   ========================= */
+
+.media-row {
+  width: 100%;
+  margin-bottom: 56px;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0px;
+}
+
+.media-row .media-block {
+  margin-bottom: 0;
+}
+
+
+/* =========================
+   VIDEO
+   ========================= */
+
+.video-block {
+  background: #181514;
+}
+
+/*
+  MP4 video:
+  keeps a standard widescreen presentation ratio.
+*/
+.video-block video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+
+  object-fit: contain;
+}
+
+
+/*
+  YouTube:
+  wrapper controls the ratio,
+  iframe fills the wrapper.
+*/
+.youtube-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.youtube-wrapper iframe {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  border: 0;
+}
+
+
+/* =========================
+   HERO IMAGE
+   ========================= */
+
+.hero-image {
+  width: 100%;
+}
+
+
+/* =========================
+   BOTTOM PROJECT NAV
+   ========================= */
+
+.project-footer {
+  max-width: var(--max-content-width);
+
+  margin: 110px auto 90px;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.project-footer a {
+  font-family: var(--display);
+  font-size: 1.35rem;
+  text-decoration: none;
+
+  transition: opacity 160ms ease;
+}
+
+.project-footer a:hover,
+.project-footer a:focus-visible {
+  opacity: 0.6;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.site-footer {
+  max-width: var(--max-content-width);
+
+  margin: 0 auto;
+  padding-top: 22px;
+  padding-bottom: 22px;
+
+  display: flex;
+  justify-content: space-between;
+
+  border-top: 1px solid rgba(33, 29, 27, 0.17);
+
+  font-size: 0.76rem;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 640px) {
+
+  :root {
+    --page-padding: 14px;
+  }
+
+  .site-header {
+    padding: 12px var(--page-padding);
+  }
+
+  .site-header nav {
+    gap: 12px;
+  }
+
+  .site-header nav a {
+    font-size: 0.74rem;
+  }
+
+  .back-wrap,
+  .project-intro {
+    width: calc(100% - (var(--page-padding) * 2));
+  }
+
+  .project-intro {
+    margin-top: calc(36px*2);
+  }
+
+  h1 {
+    font-size: clamp(3.6rem, 17vw, 5.3rem);
+  }
+
+  .project-description {
+    font-size: 1.1rem;
+  }
+
+
+  /*
+    IMPORTANT:
+
+    The actual Behance-style project content
+    becomes completely edge-to-edge on mobile.
+
+    No left/right padding.
+  */
+  .project-content {
+    width: 100%;
+    margin-top: 55px;
+  }
+
+  .media-block,
+  .media-wide,
+  .media-full,
+  .media-portrait {
+    width: 100%;
+    max-width: none;
+
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 22px;
+
+    transform: none;
+  }
+
+
+  /*
+    Two images remain next to each other.
+
+    Change to:
+
+    grid-template-columns: 1fr;
+
+    if you decide you want them stacked instead.
+  */
+  .media-row {
+    width: 100%;
+    gap: 2px;
+    margin-bottom: 22px;
+  }
+
+
+  .project-footer,
+  .site-footer {
+    width: calc(100% - (var(--page-padding) * 2));
+  }
+
+  .project-footer {
+    margin-top: 70px;
+    margin-bottom: 65px;
+  }
+
+  .project-footer a {
+    font-size: 1.1rem;
+  }
+}
+
+
+/* =========================
+   REDUCED MOTION
+   ========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.001ms !important;
+    animation-duration: 0.001ms !important;
+  }
+}
+
+
+/* OPTIONAL: add this at the bottom of project.css
+   if you want the JS scroll-reveal to be active.
+
+   If you prefer no animations at all, leave this out.
+*/
+
+.js-ready .media-block,
+.js-ready .project-heading,
+.js-ready .back-wrap,
+.js-ready .project-footer {
+  opacity: 0;
+  transform: translateY(18px);
+
+  transition:
+    opacity 650ms ease,
+    transform 650ms cubic-bezier(.2,.8,.2,1);
+}
+
+.js-ready .media-block.is-visible,
+.js-ready .project-heading.is-visible,
+.js-ready .back-wrap.is-visible,
+.js-ready .project-footer.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}

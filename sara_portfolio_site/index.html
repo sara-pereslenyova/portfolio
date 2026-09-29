@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- Makes the site behave properly on phones/tablets -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="Sara Pereslényová — multidisciplinary designer working across concept development, visual storytelling, 3D and UX.">
+
+  <title>Sara Pereslényová | Portfolio</title>
+  
+  <!--
+  FAVICONS
+  -->
+  
+  <!-- Default favicons (fallback) -->
+  <link rel="icon" type="image/x-icon" href="/favicon-light.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favi-light-bg.jpg">
+  
+  <!-- Light mode favicons -->
+  <link rel="icon" type="image/x-icon" href="/favicon-light.ico" media="(prefers-color-scheme: light)">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-light-16x16.png" media="(prefers-color-scheme: light)">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-light-32x32.png" media="(prefers-color-scheme: light)">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-light.png" media="(prefers-color-scheme: light)">
+  
+  <!-- Dark mode favicons -->
+  <link rel="icon" type="image/x-icon" href="/favicon-dark.ico" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-dark-16x16.png" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-dark-32x32.png" media="(prefers-color-scheme: dark)">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-dark.png" media="(prefers-color-scheme: dark)">
+
+  <!--
+    This project intentionally uses plain HTML, CSS and JavaScript.
+    No framework/build step is required, which should make it easier to learn and edit.
+  -->
+
+  <!-- Optional web fonts.
+       They have system fallbacks, so the site still works if the fonts fail to load. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600&family=Kalam:wght@400;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Accessibility: lets keyboard users skip straight to the main content -->
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+
+<a class="brand" href="index.html" aria-label="Back to homepage">
+
+  <!-- Your logo -->
+  <img
+    class="logo"
+    src="assets/favi-light-bg.jpg"
+    alt="logo"
+  >
+
+  <!-- Your name -->
+  <span class="wordmark">SARA</span>
+
+</a>
+    <nav aria-label="Primary navigation">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <!-- Replace this with your actual CV PDF when you have one -->
+      <a href="assets/Sara-CV.pdf" target="_blank" rel="noopener">CV</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- =========================
+         HERO
+         ========================= -->
+    <section class="hero" id="top">
+
+  <div class="hero-copy">
+    <p class="eyebrow">Multidisciplinary designer · Europe</p>
+
+    <h1>
+      Designing
+      <em>worlds, ideas</em>
+      and experiences.
+    </h1>
+
+    <p class="hero-intro">
+      I explore the space between concept development,
+      visual storytelling, 3D and human experience.
+    </p>
+
+    <a class="pill-button" href="#work">
+      See my work <span aria-hidden="true">→</span>
+    </a>
+  </div>
+
+
+  <div class="hero-art">
+    <img
+      src="assets/aish_look-2.webp"
+      alt="The Things We Carry Screencap"
+    >
+
+    
+   <!-- SCRIBBLES
+    <div class="scribble scribble-a">
+      a curious mind
+    </div>
+    
+   <div class="scribble scribble-b">
+      concepts<br>
+      research<br>
+      storytelling<br>
+      3D · UX
+    </div> -->
+  </div>
+
+</section>
+
+    <div class="paper-break" aria-hidden="true"></div>
+
+    <!-- =========================
+         WORK / FILTER
+         ========================= -->
+    <section class="work section-shell" id="work">
+      <div class="section-heading reveal">
+        <div>
+          <p class="eyebrow">Selected works</p>
+          <h2>Explore by discipline<span aria-hidden="true">✦</span></h2>
+        </div>
+        <p class="section-note">2026</p>
+      </div>
+
+      <!--
+        FILTERS
+        The buttons work with the JavaScript in script.js.
+        Each project card has a "data-disciplines" attribute.
+        Example: data-disciplines="3d concept"
+      -->
+      <div class="filter-row" role="group" aria-label="Filter projects by discipline">
+        
+        <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter-button" type="button" data-filter="selected" aria-pressed="false">Selected Work</button>
+        <button class="filter-button" type="button" data-filter="concept" aria-pressed="false">Concept</button>
+        <button class="filter-button" type="button" data-filter="3d" aria-pressed="false">3D</button>
+        <button class="filter-button" type="button" data-filter="ux" aria-pressed="false">UX / UI</button>
+        <button class="filter-button" type="button" data-filter="visual" aria-pressed="false">Visual Design</button>
+        <button class="filter-button" type="button" data-filter="illustration" aria-pressed="false">Illustration</button>
+        <button class="filter-button" type="button" data-filter="game" aria-pressed="false">Game Design</button>
+      </div>
+
+      <div class="project-grid" id="project-grid">
+        <!--
+          PROJECT TEMPLATE
+          Duplicate a .project-card and change:
+          - data-disciplines
+          - title
+          - description
+          - tools
+          - image path
+          - project link
+
+          You do NOT need to keep all six placeholder projects.
+        -->
+
+        <article class="project-card project-card-large reveal" data-disciplines="selected concept 3d visual game">
+          <a href="ttwc.html" class="project-link" aria-label="Open The Things We Carry project">
+            <div class="project-image">
+              <img src="assets/Attic_last-compressed.webp" alt="Placeholder artwork for The Things We Carry" loading="lazy">
+              <span class="project-number">01</span>
+            </div>
+            <div class="project-info">
+              <div>
+                <p class="project-type">Concept · 3D · Storytelling</p>
+                <h3>The Things We Carry</h3>
+                <p>A visual concept exploring memory, belonging and transformation.</p>
+              </div>
+              <span class="project-arrow" aria-hidden="true">↗</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="project-card reveal" data-disciplines="visual illustration concept">
+          <a href="#" class="project-link" aria-label="Open The City Rings project">
+            <div class="project-image">
+              <img src="assets/Attic_last-compressed.webp" alt="Placeholder artwork for The City Rings" loading="lazy">
+              <span class="project-number">02</span>
+            </div>
+            <div class="project-info">
+              <div>
+                <p class="project-type">Visual Design · UX/UI · Illustration</p>
+                <h3>The City Rings</h3>
+                <p>A visual identity built around memory, texture and imperfect details.</p>
+              </div>
+              <span class="project-arrow" aria-hidden="true">↗</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="project-card reveal" data-disciplines="3d ux game concept">
+          <a href="#" class="project-link" aria-label="Open The Other Side project">
+            <div class="project-image">
+              <img src="assets/project-03.svg" alt="Placeholder artwork for The Other Side" loading="lazy">
+              <span class="project-number">03</span>
+            </div>
+            <div class="project-info">
+              <div>
+                <p class="project-type">3D · UX / UI · Game Design</p>
+                <h3>The Other Side</h3>
+                <p>An interactive concept about choice, identity and perspective.</p>
+              </div>
+              <span class="project-arrow" aria-hidden="true">↗</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="project-card reveal" data-disciplines="illustration visual concept">
+          <a href="#" class="project-link" aria-label="Open Small Rituals project">
+            <div class="project-image">
+              <img src="assets/project-04.svg" alt="Placeholder artwork for Small Rituals" loading="lazy">
+              <span class="project-number">04</span>
+            </div>
+            <div class="project-info">
+              <div>
+                <p class="project-type">Illustration · Visual Design</p>
+                <h3>Small Rituals</h3>
+                <p>A collection of illustrations inspired by everyday objects and folklore.</p>
+              </div>
+              <span class="project-arrow" aria-hidden="true">↗</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="project-card project-card-large reveal" data-disciplines="concept 3d visual ux">
+          <a href="#" class="project-link" aria-label="Open Between project">
+            <div class="project-image">
+              <img src="assets/project-05.svg" alt="Placeholder artwork for Between" loading="lazy">
+              <span class="project-number">05</span>
+            </div>
+            <div class="project-info">
+              <div>
+                <p class="project-type">Concept · 3D · Experience Design</p>
+                <h3>Between</h3>
+                <p>Concept development for an immersive experience combining nature and technology.</p>
+              </div>
+              <span class="project-arrow" aria-hidden="true">↗</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="project-card reveal" data-disciplines="3d visual illustration">
+          <a href="#" class="project-link" aria-label="Open Bloom project">
+            <div class="project-image">
+              <img src="assets/project-06.svg" alt="Placeholder artwork for Bloom" loading="lazy">
+              <span class="project-number">06</span>
+            </div>
+            <div class="project-info">
+              <div>
+                <p class="project-type">3D · Visual Design</p>
+                <h3>Bloom</h3>
+                <p>An exploration of transformation through form, colour and movement.</p>
+              </div>
+              <span class="project-arrow" aria-hidden="true">↗</span>
+            </div>
+          </a>
+        </article>
+      </div>
+
+      <div class="filter-empty" id="filter-empty" hidden>
+        <p>No projects in this category yet. Try another filter.</p>
+      </div>
+    </section>
+
+    <!-- =========================
+         ABOUT
+         ========================= -->
+    <section class="about section-shell dark-panel" id="about">
+      <div class="about-grid">
+        <div class="about-copy reveal">
+          <p class="eyebrow">About me</p>
+          <h2>A little more about how I think.</h2>
+
+          <p>
+            I’m a multidisciplinary designer with a curious and inquisitive approach.
+            I like asking questions, finding connections and turning complex ideas
+            into something people can understand and feel.
+          </p>
+
+          <p>
+            My work moves between concept development, storytelling, visual design,
+            3D and UX. I am especially drawn to characters, unusual ideas and
+            experiences with a little more meaning hiding underneath.
+          </p>
+          
+          <div class="about-grid"><img class="about-picture" src="assets/pic-1.webp" alt="headshot" loading="lazy">
+            </div>
+        </div>
+
+        <div class="about-card reveal">
+          <p class="hand-note">how I tend to work</p>
+          <ul>
+            <li>Ask questions</li>
+            <li>Explore possibilities</li>
+            <li>Talk it through</li>
+            <li>Make it tangible</li>
+            <li>Get feedback</li>
+            <li>Find the thread</li>
+          </ul>
+          <span class="tiny-note">different tools · same goal</span>
+        </div>
+      </div>
+
+      <!-- Decorative thread: purely visual, no JavaScript needed -->
+      <svg class="thread-line" viewBox="0 0 900 180" role="presentation" aria-hidden="true">
+        <path d="M10 100 C 180 10, 290 170, 430 75 S 670 10, 890 110" />
+      </svg>
+    </section>
+
+    <!-- =========================
+         CV / APPROACH
+         ========================= -->
+    <section class="approach section-shell">
+      <div class="approach-heading reveal">
+        <p class="eyebrow">My approach</p>
+        <h2>From “what if?” to something tangible.</h2>
+      </div>
+
+      <div class="approach-grid">
+        <div class="approach-step reveal">
+          <span>01</span>
+          <h3>Question</h3>
+          <p>Understand the problem before deciding what the answer should look like.</p>
+        </div>
+
+        <div class="approach-step reveal">
+          <span>02</span>
+          <h3>Connect</h3>
+          <p>Look for patterns, references and unexpected relationships between ideas.</p>
+        </div>
+
+        <div class="approach-step reveal">
+          <span>03</span>
+          <h3>Make</h3>
+          <p>Translate the idea into sketches, visuals, prototypes, 3D or whatever medium fits.</p>
+        </div>
+
+        <div class="approach-step reveal">
+          <span>04</span>
+          <h3>Refine</h3>
+          <p>Test, discuss and iterate until the concept and execution support each other.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         CONTACT
+         ========================= -->
+    <section class="contact section-shell dark-panel" id="contact">
+      <div class="contact-copy reveal">
+        <p class="eyebrow">Get in touch</p>
+        <h2>Have an idea?<br><em>Let's make something.</em></h2>
+        <p>I’m interested in creative teams, internships, junior roles and interesting collaborations.</p>
+      </div>
+
+      <div class="contact-links reveal">
+        <!-- Replace these with your real links -->
+        <a href="mailto:sarapereslenyova@gmail.com">sarapereslenyova@gmail.com <span>↗</span></a>
+        <a href="https://www.linkedin.com/in/sarapereslenyova/" target="_blank" rel="noopener">LinkedIn <span>↗</span></a>
+        <a href="https://www.behance.net/sarapereslenyova" target="_blank" rel="noopener">Behance <span>↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer section-shell">
+    <p>Sara Pereslényová ✦ Multidisciplinary designer</p>
+    <p>© <span id="year"></span></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -4,14 +4,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>The Things We Carry | Sara Pereslényová</title>
+  <title id="page-template">The Things We Carry | Sara Pereslényová</title>
 
   <!-- Same fonts as the main portfolio -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="ttwc.css">
+  <link rel="stylesheet" href="project.css">
+
+  <meta name="page-image" src="assets/favi-light-bg.jpg">
 </head>
 
 <body>
@@ -30,7 +32,7 @@
   >
 
   <!-- Your name -->
-  <span class="wordmark">SARA</span>
+  <span class="wordmark">Sara Pereslényová</span>
 
 </a>
     <nav aria-label="Main navigation">
@@ -45,25 +47,25 @@
 
     <!-- =========================
          BACK TO INDEX
-         =========================
+         ========================= 
     <div class="page-padding back-wrap">
       <a href="index.html#work" class="back-link">
         <span aria-hidden="true">←</span> Back to work
       </a>
     </div>
-  -->
+    -->
 
     <!-- =========================
          PROJECT INTRO
          ========================= -->
-    <section class="page-padding project-intro">
+    <section class="hero">
 
-      <div class="project-heading">
-        <p class="eyebrow">Concept · 3D · Storytelling</p>
+      <div class="project-heading page-padding">
+        <p id="page-template" class="eyebrow">Concept · 3D · Storytelling</p>
 
-        <h1 id="page-title">The Things We Carry</h1>
+        <h1 id="page-template">The Things We Carry</h1>
 
-        <p class="project-description">
+        <p id="page-template" class="project-description">
           A short introduction to the project. Keep this brief and let the
           visual case study below tell the rest of the story.
         </p>
@@ -75,16 +77,19 @@
         Example:
         <img src="media/my-project-cover.jpg" alt="Description of the image">
       -->
+      <!--<div class="hero-art">
+      <img
+      src="assets/aish_look-2.webp"
+      alt="Project Hero Image">
+
       <img
         class="media-image hero-image"
-        src="https://www.dropbox.com/scl/fi/pe03ayc62iy56codanwf2/aish_look-2.webp?rlkey=bccpkwx0imnvybu03zszm4wnf&st=vkgw4jig&raw=1"        
+        src="assets/Attic_last-compressed.webp"    
         alt="Project hero placeholder"
       >
-            <img
-        class="media-image hero-image"
-        src="assets/Attic_last-compressed.webp"        
-        alt="Project hero placeholder"
-      >
+
+      </div>-->
+
     </section>
 
 
@@ -96,81 +101,176 @@
          Add, remove or reorder individual blocks depending
          on what the project needs.
          ========================= -->
-    <section class="page-padding project-content">
+    <section id="page-template" class="page-padding project-content">
 
       <!-- STANDARD FULL-WIDTH IMAGE -->
       <figure class="media-block">
         <img
           class="media-image"
-          src="assets/ttwc/Footer.webp"
+          src="assets/ttwc/1.webp"
           alt="Project header"
           loading="lazy"
         >
 
-        <!-- images-->
-        <img
-          class="media-image"
-          src="assets/aish_look-2.webp"
-          alt="Decription"
-          loading="lazy">
-
-      </figure>
-
-      <!-- Poster and project description side by side-->
+              <!-- Poster and project description side by side-->
       <div class="media-row">
 
-        <figure class="media-block">
+        <figure class="media-block-row">
           <img
-            class="media-image"
-            src="assets/ttwc/about.webp"
+            src="assets/ttwc/2.webp"
             alt="Process placeholder"
             loading="lazy"
           >
         </figure>
 
-        <figure class="media-block">
+        <figure class="media-block-row">
           <img
-          class="media-image"
-          src="assets/ttwc/poster_comp.webp"
-          alt="decription"
+          src="assets/ttwc/3.webp"
+          alt="Project Image"
           loading="lazy">
         </figure>
 
       </div>
 
-      <!-- TWO IMAGES SIDE BY SIDE 
-      <div class="media-row">
-
-        <figure class="media-block">
-          <img
-            class="media-image"
-            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 1100'%3E%3Crect width='900' height='1100' fill='%23d6a9aa'/%3E%3Ccircle cx='450' cy='430' r='190' fill='%23211d1b'/%3E%3Ctext x='450' y='700' text-anchor='middle' font-family='Georgia' font-size='60' fill='%23211d1b'%3EPROCESS%3C/text%3E%3C/svg%3E"
-            alt="Process placeholder"
-            loading="lazy"
-          >
-          <img
+        <!--
+        <img
           class="media-image"
-          src="assets/aish_look-2.webp"
-          alt="decription"
-          loading="lazy">
+          src="assets/ttwc/2.webp"
+          alt="Project Image"
+          loading="lazy"
+          >
+
+        <img
+          class="media-image"
+          src="assets/ttwc/3.webp"
+          alt="Project Image"
+          loading="lazy"
+          > -->
+
+        <img
+          class="media-image"
+          src="assets/ttwc/4.webp"
+          alt="Project Image"
+          loading="lazy"
+          >
+          
         </figure>
 
-        <figure class="media-block">
-          <img
-            class="media-image"
-            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 1100'%3E%3Crect width='900' height='1100' fill='%2365705a'/%3E%3Ccircle cx='450' cy='420' r='190' fill='%23eee6d8'/%3E%3Cpath d='M330 460 C390 350 510 350 570 460' fill='none' stroke='%236b2029' stroke-width='28'/%3E%3Ctext x='450' y='710' text-anchor='middle' font-family='Georgia' font-size='60' fill='%23eee6d8'%3ECHARACTER%3C/text%3E%3C/svg%3E"
-            alt="Character design placeholder"
-            loading="lazy"
-          >
-          <img
+        
+      <!-- MP4 VIDEO -->
+      <figure class="media-block video-block">
+        <video
+          controls
+          playsinline
+          preload="metadata"
+          poster="assets/ttwc/video_preview_1.webp"
+        >
+          <source src="https://www.dropbox.com/scl/fi/vwjsdqllhv0s2zqvjo9fe/The-Things-We-Carry_Trailer.mp4?rlkey=yr0418cerw8t014hsw9xh882a&st=r84sdofp&raw=1" type="video/mp4">
+          Your browser does not support HTML video.
+        </video>
+      </figure>
+
+      <figure class="media-block">
+        <img
           class="media-image"
-          src="assets/aish_look-2.webp"
-          alt="decription"
-          loading="lazy">
+          src="assets/ttwc/5.webp"
+          alt="Project Image"
+          loading="lazy"
+          >
+          
+        <img
+          class="media-image"
+          src="assets/ttwc/6.webp"
+          alt="Project Image"
+          loading="lazy"
+          >     
+
+        <img
+          class="media-image"
+          src="assets/ttwc/7.webp"
+          alt="Project Image"
+          loading="lazy"
+          >
+
+        <img
+          class="media-image"
+          src="assets/ttwc/8.webp"
+          alt="Project Image"
+          loading="lazy"
+          >
+
+        <img
+          class="media-image"
+          src="assets/ttwc/9.webp"
+          alt="Project Image"
+          loading="lazy"
+          >
+
+        <img
+          class="media-image"
+          src="assets/ttwc/10.webp"
+          alt="Project Image"
+          loading="lazy"
+          >
+
+        <img
+          class="media-image"
+          src="assets/ttwc/11.webp"
+          alt="Project Image"
+          loading="lazy"
+          >
+
+        <img
+          class="media-image"
+          src="assets/ttwc/12.webp"
+          alt="Project Image"
+          loading="lazy"
+          >
+
+        <img
+          class="media-image"
+          src="assets/ttwc/13.webp"
+          alt="Project Image"
+          loading="lazy"
+          >
+
+        <img
+          class="media-image"
+          src="assets/ttwc/14.webp"
+          alt=""
+          loading="lazy"
+          >
+
+        <img
+          class="media-image"
+          src="assets/ttwc/15.webp"
+          alt=""
+          loading="lazy"
+          >
+
+        <img
+          class="media-image"
+          src="assets/ttwc/16.webp"
+          alt=""
+          loading="lazy"
+          >
+          
+              <!-- MP4 VIDEO embed dropbox-->
+        <figure class="video-block">
+          <video
+            controls
+            playsinline
+            preload="metadata"
+            poster="assets/ttwc/Youtube thumbnail_bts sari.webp"
+          >
+            <!-- Replace with your actual MP4 -->
+            <source src="https://www.dropbox.com/scl/fi/u5kh5ihvrj85nlr84868a/Sari-Texture-Breakdown_BTS.mp4?rlkey=t1hsvglwzza2vzqxdf82aiha8&st=fkigtofc&raw=1" type="video/mp4">
+            Your browser does not support HTML video.
+          </video>
+
         </figure>
-
-      </div> -->
-
+            
+      </figure>
 
       <!-- GIF -->
       <!-- Replace src with something like: media/animation.gif -->
@@ -183,45 +283,18 @@
         >
       </figure>
 
-
-      <!-- MP4 VIDEO -->
-      <figure class="media-block video-block">
-        <video
-          controls
-          playsinline
-          preload="metadata"
-          poster="assets/ttwc/preview_youtube.webp"
-        >
-          <!-- Replace with your actual MP4 -->
-          <source src="https://www.dropbox.com/scl/fi/vwjsdqllhv0s2zqvjo9fe/The-Things-We-Carry_Trailer.mp4?rlkey=yr0418cerw8t014hsw9xh882a&st=r84sdofp&raw=1" type="video/mp4">
-          Your browser does not support HTML video.
-        </video>
-      </figure>
-
-            <!-- MP4 VIDEO embed dropbox-->
-      <figure class="media-block video-block">
-        <video
-          controls
-          playsinline
-          preload="metadata"
-          poster="assets/ttwc/Youtube thumbnail_bts sari.webp"
-        >
-          <!-- Replace with your actual MP4 -->
-          <source src="https://www.dropbox.com/scl/fi/u5kh5ihvrj85nlr84868a/Sari-Texture-Breakdown_BTS.mp4?rlkey=t1hsvglwzza2vzqxdf82aiha8&st=fkigtofc&raw=1" type="video/mp4">
-          Your browser does not support HTML video.
-        </video>
-      </figure>
+      </div>
 
       <!-- YOUTUBE VIDEO -->
+
       <!--
         Replace VIDEO_ID with your YouTube video's ID.
 
         Example:
         https://www.youtube.com/watch?v=ABC123
-        https://www.youtube.com/embed/O8PLWzALoRk
         becomes:
         https://www.youtube.com/embed/ABC123
-      -->
+
       <figure class="media-block video-block">
         <div class="youtube-wrapper">
           <iframe
@@ -233,74 +306,7 @@
           </iframe>
         </div>
       </figure>
-
-            <!-- YOUTUBE VIDEO 2-->
-      <!--
-        https://www.youtube.com/watch?v=RMvmhCa8Yr8
-        https://www.youtube.com/embed/O8PLWzALoRk
-
       -->
-      <figure class="media-block video-block">
-        <div class="youtube-wrapper">
-          <iframe
-            src="https://www.youtube.com/embed/RMvmhCa8Yr8"
-            title="Project YouTube video"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </figure>
-
-
-      <!-- FULL-WIDTH IMAGE 
-      <figure class="media-block media-full">
-        <img
-          class="media-image"
-          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1800 900'%3E%3Crect width='1800' height='900' fill='%23211d1b'/%3E%3Cpath d='M150 650 C450 200 900 200 1650 620' fill='none' stroke='%23d6a9aa' stroke-width='38'/%3E%3Ctext x='900' y='430' text-anchor='middle' font-family='Georgia' font-size='90' fill='%23eee6d8'%3EFinal Visual%3C/text%3E%3C/svg%3E"
-          alt="Final project placeholder"
-          loading="lazy"
-        >
-        
-        <img
-          class="media-image"
-          src="assets/Attic_last-compressed.webp"
-          alt="attic_screencap"
-          loading="eager"
-          >
-      </figure> -->
-
-
-      <!-- PORTRAIT IMAGE -->
-      <figure class="media-block media-portrait">
-        <img
-          class="media-image"
-          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 1200'%3E%3Crect width='900' height='1200' fill='%23eee6d8'/%3E%3Crect x='120' y='130' width='660' height='940' fill='%236b2029'/%3E%3Ctext x='450' y='590' text-anchor='middle' font-family='Georgia' font-size='75' fill='%23eee6d8'%3EPOSTER%3C/text%3E%3C/svg%3E"
-          alt="Portrait project image placeholder"
-          loading="lazy"
-        >
-      </figure>
-
-
-      <!-- MORE FULL-WIDTH CONTENT -->
-      <figure class="media-block">
-        <img
-          class="media-image"
-          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Crect width='1600' height='900' fill='%23d6a9aa'/%3E%3Cpath d='M150 700 C400 280 1200 280 1450 700' fill='none' stroke='%2365705a' stroke-width='28'/%3E%3Ctext x='800' y='430' text-anchor='middle' font-family='Georgia' font-size='80' fill='%23211d1b'%3EDetails / Development%3C/text%3E%3C/svg%3E"
-          alt="Project details placeholder"
-          loading="lazy"
-        >
-      </figure>
-
-
-      <figure class="media-block">
-        <img
-          class="media-image"
-          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Crect width='1600' height='900' fill='%2365705a'/%3E%3Ccircle cx='800' cy='450' r='250' fill='%236b2029'/%3E%3Ccircle cx='800' cy='450' r='160' fill='%23eee6d8'/%3E%3Ctext x='800' y='770' text-anchor='middle' font-family='Georgia' font-size='70' fill='%23eee6d8'%3EEnding%3C/text%3E%3C/svg%3E"
-          alt="Project ending placeholder"
-          loading="lazy"
-        >
-      </figure>
 
     </section>
 
@@ -310,19 +316,19 @@
          ========================= -->
     <nav class="page-padding project-footer" aria-label="Project navigation">
       <a href="index.html#work">← Back to selected work</a>
-      <a href="#">Next project →</a>
+      <a id="page-template" href="tcr.html">Next project →</a>
     </nav>
 
   </main>
 
 
   <footer class="page-padding site-footer">
-    <span>Sara ✦ Multidisciplinary designer</span>
+    <span>Sara Pereslényová | Portfolio</span>
     <span>© <span id="year"></span></span>
   </footer>
 
 
-  <script src="ttwc.js"></script>
+  <script src="project.js"></script>
     <!-- Link to the JavaScript file -->
   <script src="variables.js"></script>
 </body>

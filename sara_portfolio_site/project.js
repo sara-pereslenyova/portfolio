@@ -51,11 +51,25 @@ const observer = new IntersectionObserver(
 
   },
   {
-    threshold: 0.08
+    threshold: 0.02
   }
 );
 
 
 mediaItems.forEach((item) => {
   observer.observe(item);
+});
+
+const header = document.querySelector(".site-header");
+const SCROLL_TRESHOLD = 30;
+
+document.addEventListener("scroll", () => {
+  const top = document.documentElement.scrollTop;
+  if (top > SCROLL_TRESHOLD) {
+    // add the static class
+    header.classList.add ("static");
+   } else {
+    //remove the static class
+    header.classList.remove ("static");
+  } 
 });

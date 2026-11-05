@@ -121,3 +121,46 @@ document.addEventListener('DOMContentLoaded', function() {
     }, index * 100);
   });
 });
+
+/* HEADER CHANGE*/
+
+const header = document.querySelector(".site-header");
+const SCROLL_TRESHOLD = 30;
+
+document.addEventListener("scroll", () => {
+  const top = document.documentElement.scrollTop;
+  if (top > SCROLL_TRESHOLD) {
+    // add the static class
+    header.classList.add ("static");
+   } else {
+    //remove the static class
+    header.classList.remove ("static");
+  } 
+});
+
+
+/*parallax images*/
+
+const backLayer = document.querySelector('.hero-back');
+const frontLayer = document.querySelector('.hero-front');
+const middleLayer = document.querySelector('.hero-middle');
+
+function updateParallax() {
+    const scrollY = window.scrollY;
+
+    backLayer.style.transform = `translateY(${scrollY * 0.8}px)`;
+    frontLayer.style.transform = `translateY(${scrollY * 0.6}px)`;
+    middleLayer.style.transform = `translateY(${scrollY * 0.3}px)`;
+
+    /*
+    if (scrollY > 30) {
+    // add the static class
+    
+   } else {
+    //remove the static class
+    middleLayer.style.transform = `scale(${scrollY * 0.001})`
+  } */
+    requestAnimationFrame(updateParallax);
+}
+
+requestAnimationFrame(updateParallax);

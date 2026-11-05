@@ -23,9 +23,8 @@
     Full-width images can extend slightly further.
   */
   --max-content-width: 1200px;
-  --max-full-width: 1500px;
+  /* --max-full-width: 1500px;*/
 }
-
 
 /* =========================
    RESET
@@ -95,7 +94,7 @@ a {
 .site-header {
   position: fixed;
   top: 0;
-  z-index: 50;
+  z-index: 30;
 
   width: 100%;
   padding: 12px var(--page-padding);
@@ -103,10 +102,14 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: var(--ink);
   color: var(--paper);
+
+  transition: all 0.2s;
 }
 
+.site-header.static {
+  background: var(--ink);
+}
 
 .brand {
   display: inline-flex;
@@ -128,7 +131,7 @@ a {
 .wordmark {
   font-family: var(--display);
   font-size: 1.45rem;
-  letter-spacing: 0.12em;
+  letter-spacing: 0em;
   text-decoration: none;
 }
 
@@ -210,6 +213,22 @@ h1 {
   letter-spacing: -0.045em;
 }
 
+
+/* =========================
+   PROJECT INTRO
+   ========================= */
+
+.hero {
+  max-width: var(--max-content-width);
+  height: fit-content;
+  margin: calc(46px*2) auto 0;
+  z-index: 2;
+}
+
+.project-heading {
+  margin-bottom: 40px;
+}
+
 .project-description {
   max-width: 620px;
   margin: 25px 0 0;
@@ -219,20 +238,36 @@ h1 {
   line-height: 1.25;
 }
 
-
 /* =========================
-   PROJECT INTRO
+   HERO IMAGE
    ========================= */
 
-.project-intro {
-  max-width: var(--max-content-width);
-  margin: calc(46px*2) auto 0;
+.hero-art {
+  position: absolute;
+
+  /* Fill the entire hero */
+  inset: 0;
+
+  z-index: 0;
+
+  width: 100%;
+  height: fill;
+
+  display: block;
 }
 
-.project-heading {
-  margin-bottom: 40px;
-}
+.hero-art img {
+  width: 100%;
+  height: fill;
 
+  /*
+    cover = fill the whole hero.
+    Some of the image may be cropped.
+  */
+  object-fit: cover;
+
+  object-position: center;
+}
 
 /* =========================
    PROJECT MEDIA
@@ -244,7 +279,7 @@ h1 {
     Images stay inside this page width.
   */
   width: min(100%, var(--max-content-width));
-  margin: 72px auto 0;
+  margin: 0px auto 0;
 }
 
 /*
@@ -267,13 +302,15 @@ h1 {
 /* Every individual media item */
 .media-block {
   width: 100%;
-  margin: 0 auto 56px;
+  margin: 0 auto 0px;
 
   overflow: hidden;
 }
 
 
+
 /* Full width media can extend slightly beyond normal content */
+/*
 .media-full {
   width: min(
     calc(100vw - (var(--page-padding) * 2)),
@@ -283,7 +320,7 @@ h1 {
   margin-left: 50%;
   transform: translateX(-50%);
 }
-
+*/
 
 /* Portrait content */
 .media-portrait {
@@ -296,18 +333,22 @@ h1 {
    ========================= */
 
 .media-row {
-  width: 100%;
-  margin-bottom: 56px;
-
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: fill;
+  height: fill;
+  display: flex;
   gap: 0px;
 }
 
-.media-row .media-block {
-  margin-bottom: 0;
+.media-block-row {
+  width: fill;
+  overflow: hidden; 
 }
 
+.media-block-row img{
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
 
 /* =========================
    VIDEO
@@ -349,16 +390,6 @@ h1 {
 
   border: 0;
 }
-
-
-/* =========================
-   HERO IMAGE
-   ========================= */
-
-.hero-image {
-  width: 100%;
-}
-
 
 /* =========================
    BOTTOM PROJECT NAV
@@ -458,7 +489,7 @@ h1 {
   */
   .project-content {
     width: 100%;
-    margin-top: 55px;
+    margin-top: 0px;
   }
 
   .media-block,
@@ -470,7 +501,7 @@ h1 {
 
     margin-left: 0;
     margin-right: 0;
-    margin-bottom: 22px;
+    margin-bottom: 0px;
 
     transform: none;
   }
@@ -487,8 +518,8 @@ h1 {
   */
   .media-row {
     width: 100%;
-    gap: 2px;
-    margin-bottom: 22px;
+    gap: 0px;
+    margin-bottom: 0px;
   }
 
 

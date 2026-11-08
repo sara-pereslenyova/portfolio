@@ -515,8 +515,8 @@ h3 {
 .project-image {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 4 / 3;
   background: var(--paper-2);
+  border-radius: 6%;
 }
 
 .project-card-large .project-image {
@@ -526,6 +526,7 @@ h3 {
 .project-image img {
   height: 100%;
   object-fit: cover;
+  aspect-ratio: 4 / 3;
   transition: transform 500ms cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
@@ -829,6 +830,99 @@ h3 {
 }
 
 /* =========================
+   CURSOR
+   ========================= */
+/*.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    background: #222;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.25s ease,
+                height 0.25s ease,
+                background 0.25s ease;
+}*/
+
+.custom-cursor {
+    width: 12px;
+    height: 12px;
+    background: white;
+    border: 1px solid #171717;
+    border-radius: 50%;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    transform: translate3d(0, 0, 0) translate(-50%, -50%);
+    transition:
+        width 0.25s ease,
+        height 0.25s ease,
+        background 0.25s ease;
+}
+
+.custom-cursor.hover {
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* INVERT
+
+.custom-cursor {
+    background: white;
+    mix-blend-mode: difference;
+}*/
+
+@media (hover: hover) and (pointer: fine) {
+    body {
+        cursor: auto;
+    }
+
+    a, button, [role="button"] {
+        cursor: none;
+    }
+}
+
+
+
+@media (hover: hover) and (pointer: fine) {
+    body {
+        cursor: none;
+    }
+
+    .custom-cursor {
+        display: block;
+    }
+}
+
+@media (hover: none), (pointer: coarse) {
+    .custom-cursor {
+        display: none;
+    }
+
+    body {
+        cursor: auto;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .custom-cursor {
+        display: none !important;
+    }
+
+    body {
+        cursor: auto !important;
+    }
+}
+
+
+/* =========================
    REDUCED MOTION
    ========================= */
 @media (prefers-reduced-motion: reduce) {
@@ -893,6 +987,12 @@ h3 {
 
   .site-header nav a {
     font-size: 0.76rem;
+  }
+
+  .wordmark {
+    font-family: var(--display);
+    font-size: 0.76rem;
+    letter-spacing: 0em;
   }
 
   h1 {

@@ -97,6 +97,15 @@ filterButtons.forEach((button) => {
   });
 });
 
+// Set Selected Work as the default filter on page load.
+const defaultFilter = document.querySelector(
+  '.filter-button[data-filter="selected"]'
+);
+
+if (defaultFilter) {
+  defaultFilter.click();
+}
+
 /* --------------------------------------------
    4. PROJECT VIEW PAGE INTERACTIONS
    -------------------------------------------- */
@@ -164,3 +173,58 @@ function updateParallax() {
 }
 
 requestAnimationFrame(updateParallax);
+
+
+/* CURSOR CHANGE*/
+
+const cursor = document.querySelector(".custom-cursor");
+
+const hasMouse = window.matchMedia(
+    "(hover: hover) and (pointer: fine)"
+);
+
+const reducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+);
+
+if (cursor && hasMouse.matches && !reducedMotion.matches) {
+
+    let mouseX = 0;
+    let mouseY = 0;
+    let ticking = false;
+
+    // Mouse tracking
+    document.addEventListener("mousemove", (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                cursor.style.left = "0px";
+                cursor.style.top = "0px";
+
+                cursor.style.transform =
+                    `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+
+                ticking = false;
+            });
+
+            ticking = true;
+        }
+    });
+
+    // Hover expansion
+    const hoverElements = document.querySelectorAll(
+        "a, button, .project-card, [role='button']"
+    );
+
+    hoverElements.forEach((element) => {
+        element.addEventListener("mouseenter", () => {
+            cursor.classList.add("hover");
+        });
+
+        element.addEventListener("mouseleave", () => {
+            cursor.classList.remove("hover");
+        });
+    });
+}

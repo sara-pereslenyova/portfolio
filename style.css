@@ -249,6 +249,8 @@ h3 {
   opacity: 0.55;
 }
 
+
+
 /* =========================
    HERO
    ========================= */
@@ -453,8 +455,8 @@ h3 {
 }
 
 .section-heading h2 span {
-  font-family: var(--hand);
-  font-size: 0.6em;
+  font-family: var(--display-whimsy);
+  /*font-size: 0.6em;*/
 }
 
 .filter-row {
@@ -991,7 +993,6 @@ h3 {
 
   .wordmark {
     font-family: var(--display);
-    font-size: 0.88rem;
     letter-spacing: 0em;
   }
 
@@ -1030,6 +1031,29 @@ h3 {
   .hero-art img {
     object-position: 30% center;
   }
+
+/*
+lets the browser know it will be animated
+*/
+  .hero-back,
+  .hero-front,
+  .hero-middle {
+      will-change: transform;
+  }
+
+  .parallax-active {
+      will-change: transform;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-back,
+    .hero-front,
+    .hero-middle {
+        transform: none !important;
+    }
+}
+
+
 
   .about-picture-background {
     min-height: 330px;
@@ -1091,3 +1115,5 @@ h3 {
     width: calc(100% - 28px);
   }
 }
+
+

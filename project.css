@@ -66,6 +66,10 @@ a {
   color: inherit;
 }
 
+::selection {
+  color: var(--cream);
+  background: var(--burgundy);
+}
 
 /* =========================
    SHARED PAGE PADDING

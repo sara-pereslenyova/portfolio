@@ -150,7 +150,7 @@ document.addEventListener("scroll", () => {
 
 /*parallax images*/
 
-const backLayer = document.querySelector('.hero-back');
+/*const backLayer = document.querySelector('.hero-back');
 const frontLayer = document.querySelector('.hero-front');
 const middleLayer = document.querySelector('.hero-middle');
 
@@ -169,10 +169,75 @@ function updateParallax() {
     //remove the static class
     middleLayer.style.transform = `scale(${scrollY * 0.001})`
   } */
-    requestAnimationFrame(updateParallax);
+    /*requestAnimationFrame(updateParallax);
 }
 
-requestAnimationFrame(updateParallax);
+requestAnimationFrame(updateParallax); */
+
+
+const hero = document.querySelector('.hero');
+
+const backLayer = document.querySelector('.hero-back');
+const frontLayer = document.querySelector('.hero-front');
+const middleLayer = document.querySelector('.hero-middle');
+
+const layers = [backLayer, frontLayer, middleLayer];
+
+if (hero && layers.every(layer => layer)) {
+
+    let heroVisible = false;
+    let animationFrame = null;
+
+    // Update parallax positions
+    function updateParallax() {
+        animationFrame = null;
+
+        if (!heroVisible) return;
+
+        const scrollY = window.scrollY;
+
+        backLayer.style.transform = `translate3d(0, ${scrollY * 0.8}px, 0)`;
+        frontLayer.style.transform = `translate3d(0, ${scrollY * 0.6}px, 0)`;
+        middleLayer.style.transform = `translate3d(0, ${scrollY * 0.3}px, 0)`;
+    }
+
+    // Only schedule one animation frame at a time
+    function requestUpdate() {
+        if (!heroVisible || animationFrame !== null) return;
+
+        animationFrame = requestAnimationFrame(updateParallax);
+    }
+
+    // Detect whether the hero is visible
+    const observer = new IntersectionObserver((entries) => {
+        heroVisible = entries[0].isIntersecting;
+
+    // Toggle will-change only while hero is visible
+    layers.forEach(layer => {
+        layer.classList.toggle('parallax-active', heroVisible);
+    });
+
+        if (heroVisible) {
+            requestUpdate();
+        } else if (animationFrame !== null) {
+            cancelAnimationFrame(animationFrame);
+            animationFrame = null;
+        }
+
+    }, {
+        threshold: 0,
+        rootMargin: '100px 0px'
+    });
+
+    observer.observe(hero);
+
+    // Listen for scrolling
+    window.addEventListener('scroll', requestUpdate, { passive: true });
+
+    // Recalculate when viewport changes
+    window.addEventListener('resize', requestUpdate, { passive: true });
+
+}
 
 
 /* CURSOR CHANGE*/

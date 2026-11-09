@@ -240,7 +240,7 @@ if (hero && layers.every(layer => layer)) {
 }
 
 
-/* CURSOR CHANGE*/
+/* CURSOR CHANGE */
 
 const cursor = document.querySelector(".custom-cursor");
 
@@ -271,6 +271,8 @@ if (cursor && hasMouse.matches && !reducedMotion.matches) {
                 cursor.style.transform =
                     `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
 
+                cursor.classList.add("is-visible"); // ADD THIS
+
                 ticking = false;
             });
 
@@ -293,3 +295,5 @@ if (cursor && hasMouse.matches && !reducedMotion.matches) {
         });
     });
 }
+
+

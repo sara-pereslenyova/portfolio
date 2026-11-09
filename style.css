@@ -862,8 +862,13 @@ h3 {
     left: 0;
     z-index: 99999;
     transform: translate3d(0, 0, 0) translate(-50%, -50%);
+
+        /* Initial visibility */
+    opacity: 0;
+
     transition:
         width 0.25s ease,
+        height 0.25s ease,
         height 0.25s ease,
         background 0.25s ease;
 }
@@ -872,6 +877,10 @@ h3 {
     width: 45px;
     height: 45px;
     background: rgba(255, 255, 255, 0.25);
+}
+
+.custom-cursor.is-visible {
+    opacity: 1;
 }
 
 /* INVERT

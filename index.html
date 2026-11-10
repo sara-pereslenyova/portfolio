@@ -61,7 +61,7 @@
 
   <header class="site-header">
 
-  <a class="brand" href="index.html" aria-label="Back to homepage">
+  <a class="brand" href="./" aria-label="Back to homepage">
 
   <!-- Your logo -->
   <img
@@ -103,9 +103,11 @@
       visual storytelling, 3D and human experience.
     </p>
 
+    <!-- pill button
     <a class="pill-button" href="#work">
       See my work <span aria-hidden="true">→</span>
     </a>
+    -->
   </div>
 
 
@@ -140,12 +142,13 @@
 
 </section>
 
-    <div class="paper-break paper" aria-hidden="true"></div>
+     <div class="paper-break paper" aria-hidden="true"></div>
 
     <!-- =========================
          WORK / FILTER
          ========================= -->
     <section class="work section-shell light-panel" id="work">
+
       <div class="section-heading reveal">
         <div>
           <p class="eyebrow">MY WORK</p>
@@ -190,7 +193,14 @@
           <a href="html/ttwc.html" class="project-link" aria-label="Open The Things We Carry project">
             <div class="project-image">
               <img src="assets/ttwc/gallery.webp" alt="Placeholder artwork for The Things We Carry" loading="lazy">
-              <span class="project-number">01</span>
+              <!-- Hidden image revealed by cursor -->
+              <img
+                  src="assets/Attic_last-compressed.webp"
+                  alt=""
+                  class="project-reveal"
+                  aria-hidden="true"
+              >              
+    <span class="project-number">01</span>
             </div>
             <div class="project-info">
               <div>
@@ -344,11 +354,12 @@
         -->
       </div>
 
-      <!-- Decorative thread: purely visual, no JavaScript needed -->
+      <!-- Decorative thread: purely visual, no JavaScript needed 
       <svg class="thread-line" viewBox="0 0 900 180" role="presentation" aria-hidden="true">
         <path d="M10 100 C 180 10, 290 170, 430 75 S 670 10, 890 110" />
-      </svg>
+      </svg> -->
     </section>
+
 
     <!-- =========================
          CV / APPROACH
@@ -386,6 +397,7 @@
       </div>
     </section>
 
+
     <!-- =========================
          CONTACT
          ========================= -->
@@ -405,6 +417,8 @@
     </section>
   </main>
 
+
+       
   <footer class="footer section-shell">
     <p>Sara Pereslényová | Portfolio</p>
     <p>© <span id="year"></span></p>

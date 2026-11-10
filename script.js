@@ -297,3 +297,33 @@ if (cursor && hasMouse.matches && !reducedMotion.matches) {
 }
 
 
+
+/* PROJECT CURSOR HOVER */
+
+const projectImages = document.querySelectorAll(".project-image");
+
+projectImages.forEach((container) => {
+    const reveal = container.querySelector(".project-reveal");
+
+    if (!reveal) return;
+
+    container.addEventListener("mousemove", (e) => {
+        const rect = container.getBoundingClientRect();
+
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        reveal.style.setProperty("--x", `${x}px`);
+        reveal.style.setProperty("--y", `${y}px`);
+    });
+
+    container.addEventListener("mouseenter", () => {
+        container.classList.add("is-hovered");
+    });
+
+    container.addEventListener("mouseleave", () => {
+        container.classList.remove("is-hovered");
+    });
+});
+
+

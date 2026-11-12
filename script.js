@@ -2,14 +2,6 @@
   ============================================
   SIMPLE PORTFOLIO INTERACTIONS
   ============================================
-
-  This file does two main things:
-
-  1. Reveals sections gently as you scroll.
-  2. Filters your project cards by discipline.
-
-  It intentionally uses vanilla JavaScript so you can learn what is happening
-  without needing React, npm, a build system, etc.
 */
 
 document.documentElement.classList.add("js-ready");
@@ -300,7 +292,7 @@ if (cursor && hasMouse.matches && !reducedMotion.matches) {
 
 /* PROJECT CURSOR HOVER */
 
-const projectImages = document.querySelectorAll(".project-image");
+/*const projectImages = document.querySelectorAll(".project-image");
 
 projectImages.forEach((container) => {
     const reveal = container.querySelector(".project-reveal");
@@ -326,4 +318,5 @@ projectImages.forEach((container) => {
     });
 });
 
+*/
 
